@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import NavBar from "./components/NavBar.jsx";
 
 
 const App = () => {
@@ -15,17 +16,26 @@ const App = () => {
         fetchTodo()
     }, []);
     return (
-        <div>
-            <h1>Home Page</h1>
-            {todo.map((todo)=>{
-                return(
-                    <>
-                    <h1 key={todo._id}>{todo.title}</h1>
-                    <h2>{todo.description}</h2>
-                    </>
-                )
+        <>
+        <NavBar/>
+        <div className="grid grid-flow-row grid-cols-3 gap-4 mx-auto">
+        {todo.map((todo)=>{
+            return(
+                <div className="card w-96 glass ml-5 mt-5">
+                    <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt=""/></figure>
+                    <div className="card-body">
+                        <h2 className="card-title">{todo.title}</h2>
+                        <p>{todo.description}</p>
+                        <div className="card-actions justify-end">
+                            <button className="btn btn-primary">Edit Task</button>
+                        </div>
+                    </div>
+                </div>
+            )
             })}
+
         </div>
+        </>
     );
 };
 

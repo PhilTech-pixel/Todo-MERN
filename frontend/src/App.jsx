@@ -1,37 +1,19 @@
-import React, {useEffect, useState} from 'react';
-import axios from "axios";
-import NavBar from "./components/NavBar.jsx";
 
-import TodoCard from "./components/TodoCard.jsx";
-import {Toaster} from "react-hot-toast";
+import HomePage from "./pages/HomePage.jsx";
+import {Routes, Route} from "react-router";
+import CreatePage from "./pages/CreatePage.jsx";
+import EditPage from "./pages/EditPage.jsx";
 
 const App = () => {
-    const [todo, setTodo] = useState([])
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        const fetchTodo = async()=>{
-            const response = await axios.get("http://localhost:5001/api/v1/todo")
-            setTodo(response.data)
-            console.log(response.data)
-        }
-        fetchTodo()
-    }, []);
-
 
     return (
-        <>
-            <Toaster/>
-        <NavBar/>
-        <div className="flex flex-wrap">
-        {todo.map((todo)=>{
-            return(
-                <TodoCard todo={todo}/>
-            )
-            })}
-
+        <div>
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/todo/create" element={<CreatePage/>}/>
+                <Route path="/todo/:id" element={<EditPage/>}/>
+            </Routes>
         </div>
-        </>
     );
 };
 

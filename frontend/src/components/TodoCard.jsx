@@ -22,6 +22,8 @@ const TodoCard = ({todo}) => {
             <div className="card-body">
                 <h2 className="card-title">{todo.title}</h2>
                 <p>{todo.description}</p>
+                {todo.isCompleted  &&                 <input type="checkbox" checked="checked" className="checkbox checkbox-xs" />
+                }
                 <div className="card-actions justify-end">
                     <SquarePen className="text-white" />
 

@@ -18,16 +18,15 @@ const App = () => {
     return (
         <>
         <NavBar/>
-        <div className="grid grid-flow-row grid-cols-3 gap-4 mx-auto">
+        <div className="flex flex-wrap">
         {todo.map((todo)=>{
             return(
-                <div className="card w-96 glass ml-5 mt-5">
-                    <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt=""/></figure>
+                <div className="card w-96 bg-base-100 shadow-xl ml-5 mt-5">
                     <div className="card-body">
-                        <h2 className="card-title">{todo.title}</h2>
-                        <p>{todo.description}</p>
+                        <h2 className="card-title">Card title!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Edit Task</button>
+                            <button className="btn btn-primary">Buy Now</button>
                         </div>
                     </div>
                 </div>

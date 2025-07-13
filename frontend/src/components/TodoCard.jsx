@@ -1,10 +1,9 @@
 import React from 'react';
 import { SquarePen, Trash2} from "lucide-react";
-import {Link} from 'react-router'
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const TodoCard = ({todo}) => {
+const TodoCard = ({todo, setTodo}) => {
 
     const handleDelete = async (e, id)=>{
         e.preventDefault()
@@ -12,6 +11,8 @@ const TodoCard = ({todo}) => {
             if(!window.confirm("Are you sure you want to delete this task")) return;
             await axios.delete(`http://localhost:5001/api/v1/todo/${id}`)
             toast.success("Task Deleted Successfully")
+            setTodo((prev)=> prev.filter(todo=> todo._id !== id))
+
 
         }catch (e) {
             toast.error("Error! Task not Deleted")

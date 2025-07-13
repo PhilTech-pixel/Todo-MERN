@@ -45,7 +45,7 @@ const CreatePage = () => {
                 <div className="card-body m-5">
 
                     <div className="card-title items-center justify-center">
-                        <h1>Add a New Note</h1>
+                        <h1>Add a New Task</h1>
                     </div>
                     <form onSubmit={handleSubmit}>
                     <div className="form-control flex items-center justify-center">
@@ -60,7 +60,7 @@ const CreatePage = () => {
 
                     </div>
                     <div className="card-actions mt-5 justify-end">
-                        <button type="submit" className="btn btn-success" >Save</button>
+                        <button type="submit" className="btn btn-success" disabled={saving}>{!saving ? "Save" : "Saving"}</button>
                     </div>
                     </form>
                 </div>

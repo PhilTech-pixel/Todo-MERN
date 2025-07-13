@@ -18,7 +18,8 @@ const NavBar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Add New Taks</a></li>
+
+                    <li><a href="/todo/create">Add New Tasks</a></li>
 
                     <li><a>View Completed Task</a></li>
                 </ul>

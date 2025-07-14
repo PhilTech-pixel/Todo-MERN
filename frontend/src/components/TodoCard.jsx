@@ -1,7 +1,8 @@
 import React from 'react';
-import { SquarePen, Trash2} from "lucide-react";
+import {SquarePen, Trash2} from "lucide-react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import {Link} from "react-router";
 
 const TodoCard = ({todo, setTodo}) => {
 
@@ -26,8 +27,9 @@ const TodoCard = ({todo, setTodo}) => {
                 {todo.isCompleted  &&                 <input type="checkbox" checked="checked" className="checkbox checkbox-xs" />
                 }
                 <div className="card-actions justify-end">
+                    <Link to={`/todo/${todo._id}`}>
                     <SquarePen className="text-white" />
-
+                    </Link>
                     <button onClick={(e)=>handleDelete(e, todo._id)} >
                         <Trash2 className="text-red-500" />
                     </button>

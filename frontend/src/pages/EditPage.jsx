@@ -47,7 +47,7 @@ const EditPage = () => {
         )
     }
     return (
-        <div className="min-h-screen bg-base-200 justify-center">
+        <div className="min-h-screen  flex items-center justify-center">
             <div className="card max-w-96 bg-base-200 card-lg">
                 <div className="card-body m-5">
 
